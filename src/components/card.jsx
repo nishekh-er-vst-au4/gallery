@@ -25,11 +25,15 @@ class ImageCard extends React.Component {
     const imageName = String(window.prompt("type a Image Name"));
     const imageDescription = String(window.prompt("type Image Description"));
 
-    //dispatching name description and image to redux state management
-    this.props.dispatch(setImageName(imageName));
-    this.props.dispatch(setImageDescription(imageDescription));
-    this.props.dispatch(setImage(this.props.image.urls.regular));
-    this.props.dispatch(setImageList());
+    if (!imageName || !imageDescription) {
+      window.alert("You should enter  both inputs");
+    } else {
+      //dispatching name description and image to redux state management
+      this.props.dispatch(setImageName(imageName));
+      this.props.dispatch(setImageDescription(imageDescription));
+      this.props.dispatch(setImage(this.props.image.urls.regular));
+      this.props.dispatch(setImageList());
+    }
   };
   render() {
     return (
