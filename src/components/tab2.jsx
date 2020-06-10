@@ -26,6 +26,7 @@ class Tab2 extends React.Component {
     );
   }
 }
+
 const mapStateToProps = (state) => {
   return {
     image: state.image.imageList,
